@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	/* 1.如果单独使用，this 表示全局对象。*/
+	console.log(this)
+
+
+	/* 2.在方法中，this 表示该方法所属的对象。 */
+	let info1 = {
+		name:'小1',
+		addr:'地址1',
+		age:'10',	
+		test1:function () {
+			return '姓名=' + this.name  + '，地址=' + this.addr
+		}
+	}
+	console.log(info1.test1())
+
+
+	/* 3.在函数中，this 表示全局对象。*/
+	function test1() {
+		return console.log(this)
+	}
+	test1()
+
+
+	console.log('11111');
+
+	var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return console.log(this);
+    }
+}
+	myObject.fullName()
+
+
+
+	</script>
+</body>
+</html>

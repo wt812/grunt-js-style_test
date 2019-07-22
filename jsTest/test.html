@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	let num;
+	var ab = function (a,b){
+		num = a+b
+		return num
+	}
+ab(1,2)
+console.log(num)
+
+
+	let num1;
+	((a,b)=>{
+		num1 = a+b
+		return num1
+	}) (2,2)
+	console.log(num1)
+
+
+
+	let x = (a,b) => a+b
+	console.log(x(1,2))
+	</script>
+</body>
+</html>

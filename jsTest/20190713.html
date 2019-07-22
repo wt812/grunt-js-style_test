@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document1</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/name.min.css">
+</head>
+<body>
+	<script type="text/javascript">
+	let ab,bb, a=10,b=10;
+	function fun() {
+		ab = a+b
+		return ab
+	}
+	fun()
+	// 这个ab 就是上面let中ab
+	console.log('ab =',ab)
+
+	if(ab == 20) { 
+		function ff(){
+			bb = a+b
+			return bb
+		}
+		ff()
+		console.log('bb =',bb)
+	} else {
+		console.log('走else，未知');
+	}
+
+
+	console.log('-------');
+	// if 的简写
+	/* 1 */
+	let cc = 1;
+	cc && console.log('是1')
+
+	/* 2 */ 
+	if(cc) {
+		console.log('是2')
+	} else {
+		console.log('非2')
+	}
+	/* 3 */
+	if(cc) console.log('是3'),console.log('是33'),console.log('是333')
+
+
+	</script>
+</body>
+</html>

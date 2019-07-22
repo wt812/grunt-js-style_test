@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	/* 使用 
+	call.()、apply.()、bind.()
+	改变info1.test1() 中this.name跟 this.addr 的指向 */
+	let info1 = {
+		name:'小1',
+		addr:'地址1',
+		age:'10',	
+		test1:function () {
+			return '姓名=' + this.name  + '，地址=' + this.addr
+		}
+	}
+	console.log(info1.test1(),'------这个是初始的数据')
+
+	
+	let info11 = {
+		name:'小11',
+		addr:'地址11',
+		age:'110',	
+	}
+	//使用call.（） 
+	console.log(info1.test1.call(info11),'------call.()改变的数据')
+
+
+	let info111 = {
+		name:'小111',
+		addr:'地址111',
+		age:'1110',	
+	}
+	//使用apply.（） 
+	console.log(info1.test1.apply(info111),'------apply.()改变的数据');
+
+	let info1111 = {
+		name:'小1111',
+		addr:'地址11111',
+		age:'11110',	
+	}
+	//使用bind.（） 
+	console.log(info1.test1.bind(info1111)(),'------bind.()改变的数据');
+
+
+
+	/* 使用 call.()、apply.()、bind.() 传递参数 */
+	let info2 = {
+		name:'小2',
+		addr:'地址2',
+		age:'20',
+		test2:function (a,b) {
+			console.log(a)
+			console.log(b)
+		}
+	}
+	/* call.()传递 */
+	console.log(info2.test2.call(info2,1,2));
+	console.log(info2.test2.call(info2,['1','2']),'-------call');
+
+	/*apply.()传递*/
+	console.log(info2.test2.apply(info2,['1','2']),'------apply');
+
+	/*bind.()传递*/
+	console.log(info2.test2.bind(info2,1,2)());
+	console.log(info2.test2.bind(info2,['1','2'])(),'------bind')
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script type="text/javascript">
+
+var arr1 = [1,2,3,4,5,6];
+var arr2 = [3,4,5,10];
+var arr3 = [10,20,30,50,20,30];
+
+var set1 = new Set(arr1);
+var set2 = new Set(arr2);
+var set3 = new Set(arr3);
+
+//并集 
+console.log('--并集，多个数组arr1,arr2,arr3 相加最后去重--');	
+console.log(arr1,arr2,arr3,'原数据');
+console.log(Array.from(new Set(arr1.concat(arr2,arr3))));
+console.log([...new Set(arr1.concat(arr2,arr3))]);
+
+//交集 
+console.log('--交集，把多个数组相同的数字显示出来--');
+console.log(arr1.filter(x=> set2.has(x)));
+
+//差集 
+console.log('--差集，arr1跟set2比较，去set2没有的数字--');
+console.log(arr1,arr2,'原数据');	
+console.log(arr1.filter(x=> !set2.has(x)));
+
+//补集 
+console.log('--补集，取多个数组不同的数字（跟交集相反）--');
+console.log([...arr1.filter(x=>!set2.has(x)),...arr2.filter(x=>!set1.has(x))]);
+//去重=> 
+console.log('--去重，单个数组arr3相同的数去掉--');
+console.log(arr3,'原数据');
+console.log(Array.from(new Set(arr3)));
+console.log([...new Set(arr3)]);
+</script>
+<body>
+	
+</body>
+</html>
